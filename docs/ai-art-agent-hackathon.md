@@ -1,45 +1,45 @@
-# وكيل معلم التربية الفنية لتحليل أعمال الطلاب - Agents League
+# Art Education AI Agent - Agents League
 
-## اسم المشروع
+## Project Name
 
-منصة arts: وكيل معلم التربية الفنية لتحليل أعمال الطلاب لتحليل أعمال الطلاب.
+Art Education AI Agent for Student Artwork Analysis.
 
-## المشكلة
+## Problem
 
-معلم التربية الفنية يحتاج وقتًا طويلًا لمراجعة أعمال الطلاب وكتابة تغذية راجعة تربوية مخصصة لكل طالب. غالبًا تكون الملاحظات إما عامة جدًا أو تحتاج جهدًا يدويًا كبيرًا، خصوصًا عند وجود عدد كبير من الطلاب والأعمال الفنية.
+Art education teachers spend significant time reviewing student artwork and writing individualized feedback. The work becomes harder when a teacher manages many classes and submissions. Feedback can become too generic, delayed, or difficult to reuse in a structured learning workflow.
 
-## الحل
+## Solution
 
-يوفر وكيل معلم التربية الفنية لتحليل أعمال الطلاب صفحة داخل حساب المعلم تساعده على اختيار عمل فني لطالب، ثم توليد تحليل تربوي منظم يتضمن:
+The Art Education AI Agent provides a teacher-facing page inside the arts platform. A teacher can select a student artwork and generate a structured educational analysis that includes:
 
-- ملخص العمل الفني.
-- خطوات تحليل الوكيل.
-- نقاط القوة.
-- جوانب التحسين.
-- مستوى الأداء.
-- تغذية راجعة جاهزة للطالب.
-- نشاط علاجي أو إثرائي مقترح.
-- ملاحظات موجزة للمعلم.
+- Artwork summary.
+- Visible agent analysis steps.
+- Strengths.
+- Improvement areas.
+- Performance level.
+- Ready-to-use student feedback.
+- Suggested remediation or enrichment activity.
+- Short teacher notes.
 
-## كيف يعمل الوكيل
+## How The Agent Works
 
-1. يقرأ بيانات العمل الفني مثل العنوان والوصف واسم الطالب والفصل.
-2. يحلل الفكرة والعناصر الفنية مثل التكوين واللون والتعبير.
-3. يربط العمل بمهارات التربية الفنية المناسبة.
-4. يحدد مستوى الأداء من: يحتاج دعمًا، في طور التحسن، متمكن، متقدم.
-5. يولد تغذية راجعة تربوية قابلة للاستخدام مباشرة.
-6. يقترح نشاطًا علاجيًا أو إثرائيًا يمكن للمعلم تطبيقه.
+1. Reads artwork context such as title, description, student name, class, and teacher notes.
+2. Analyzes the artistic idea and elements such as composition, color, line, space, material, and expression.
+3. Connects observations to relevant art education skills.
+4. Selects one performance level: Needs support, Improving, Proficient, or Advanced.
+5. Generates educational feedback that the teacher can review before sharing.
+6. Suggests a remediation or enrichment activity for the teacher.
 
-## التقنيات المستخدمة
+## Technologies Used
 
-- React و Vite لواجهة المعلم.
-- TypeScript لضبط الأنواع.
-- tRPC لربط الواجهة بالسيرفر.
-- Drizzle و MySQL لحفظ نتائج التحليل.
-- خدمة LLM الحالية في المشروع عبر `server/_core/llm.ts`.
-- fallback عربي منظم عند عدم توفر مفاتيح الذكاء الاصطناعي.
+- React and Vite for the teacher interface.
+- TypeScript for type safety.
+- tRPC for client/server integration.
+- Drizzle and MySQL for storing analysis records.
+- The existing project LLM service through `server/_core/llm.ts`.
+- Structured fallback mode when an AI provider key is not configured.
 
-## خطوات التشغيل
+## Run Steps
 
 ```bash
 pnpm install
@@ -48,128 +48,118 @@ pnpm build
 pnpm dev
 ```
 
-ثم افتح:
+Then open:
 
 ```text
 /teacher/ai-art-agent
 ```
 
-## متغيرات البيئة
+## Environment Variables
 
-لتفعيل الصفحة:
+Enable the feature:
 
 ```env
 AI_ART_AGENT_ENABLED=true
 ```
 
-لتفعيل التحليل الحقيقي بدل fallback، يجب ضبط مفتاح مزود الذكاء الاصطناعي المستخدم في المشروع:
+Configure an AI provider key when available:
 
 ```env
 BUILT_IN_FORGE_API_KEY=...
 ```
 
-لا يتم تضمين أي مفاتيح أو أسرار داخل الكود أو التوثيق.
+Do not commit real keys or secrets to the repository.
 
-## مسار الصفحة
+## Page Route
 
 ```text
 /teacher/ai-art-agent
 ```
 
-ويمكن فتح الوكيل مع اختيار عمل محدد تلقائيًا عبر:
+The agent can also open with a selected artwork:
 
 ```text
 /teacher/ai-art-agent?artworkId=ARTWORK_ID
 ```
 
-## ملاحظات للهاكاثون
+## Hackathon Notes
 
-- يوجد وضع Demo داخل الصفحة عند عدم توفر أعمال فنية، حتى يمكن تصوير العرض دون بيانات فعلية.
-- الوكيل يعرض خطوات التحليل بصريًا لإبراز سلوك Agent واضح.
-- الميزة خلف feature flag ولا تغيّر نظام الصلاحيات.
-- عند غياب مفتاح AI، تعمل الصفحة برد fallback عربي منظم بدل إظهار خطأ.
+- The page includes a demo mode when no artwork is available, so the demo can run without real student data.
+- The agent displays analysis steps visually to make agent behavior clear.
+- The feature is behind a feature flag and does not change the permission model.
+- When no AI key is configured, the page returns a structured fallback response instead of exposing an error.
 
 ## Microsoft Copilot Agent Builder Version
 
-### اسم الوكيل المقترح
+Suggested agent name: Art Education AI Agent.
 
-وكيل معلم التربية الفنية لتحليل أعمال الطلاب.
+The Microsoft Copilot Agent Builder version mirrors the in-platform agent. It helps an art education teacher analyze artwork based on details or notes typed into Copilot. It does not directly connect to the platform backend in the current release.
 
-### وصف الوكيل
+### Suggested System Instructions
 
-نسخة Microsoft Copilot Agent Builder هي وكيل موازٍ لفكرة الوكيل الموجود داخل منصة arts. يساعد معلم التربية الفنية على تحليل أعمال الطلاب انطلاقًا من وصف العمل أو ملاحظات المعلم أو صورة يصفها المعلم نصيًا، ثم يولد تغذية راجعة تربوية منظمة يمكن استخدامها في الحصة أو عند مراجعة الأعمال.
+You are an educational assistant specialized in art education. Your task is to help art teachers analyze student artworks in a constructive, practical, and privacy-aware way. When the teacher provides artwork details or observations:
 
-### System Instructions المقترحة
+1. Read the artwork context and available student/class context.
+2. Analyze artistic elements such as composition, color, line, space, material, and expression.
+3. Connect the observations to suitable art education skills.
+4. Choose a performance level from: Needs support, Improving, Proficient, Advanced.
+5. Write ready-to-use student feedback in a clear and encouraging tone.
+6. Suggest a remediation or enrichment activity for the teacher.
 
-أنت وكيل تعليمي متخصص في التربية الفنية باللغة العربية. مهمتك مساعدة معلم التربية الفنية على تحليل أعمال الطلاب بطريقة تربوية، مشجعة، وعملية. عند استلام وصف عمل فني أو ملاحظات عن عمل طالب، اتبع هذه الخطوات:
+Respect privacy. Do not ask for sensitive personal student data. Do not compare students to each other. If the provided context is incomplete, state the limits of the analysis and suggest what the teacher could add.
 
-1. اقرأ بيانات العمل الفني وسياق الطالب إن توفر.
-2. حلل الفكرة والعناصر الفنية مثل التكوين، اللون، الخط، المساحة، الخامة، والتعبير.
-3. اربط الملاحظة بمهارات التربية الفنية المناسبة.
-4. حدد مستوى الأداء من: يحتاج دعمًا، في طور التحسن، متمكن، متقدم.
-5. اكتب تغذية راجعة جاهزة للطالب بلغة مشجعة ومحددة.
-6. اقترح نشاطًا علاجيًا أو إثرائيًا مناسبًا للمعلم.
+### Response Format
 
-التزم بالخصوصية ولا تطلب بيانات حساسة عن الطلاب. لا تصدر أحكامًا قاسية أو مقارنات بين الطلاب. إذا كانت البيانات ناقصة، اذكر أنك اعتمدت على المعلومات المتاحة واقترح ما يحتاجه المعلم لإثراء التحليل.
+Use this structure:
 
-### صيغة الإجابة
+- Artwork summary.
+- How the agent reached the result.
+- Strengths.
+- Improvement areas.
+- Performance level.
+- Ready-to-use student feedback.
+- Suggested remediation or enrichment activity.
+- Short student message.
+- Teacher notes.
 
-يفضل أن تكون إجابة الوكيل بهذا الترتيب:
+### Example Teacher Prompts
 
-- ملخص العمل الفني.
-- كيف وصل الوكيل للنتيجة.
-- نقاط القوة.
-- جوانب التحسين.
-- مستوى الأداء.
-- تغذية راجعة جاهزة للطالب.
-- نشاط علاجي أو إثرائي مقترح.
-- رسالة قصيرة للطالب.
-- ملاحظات للمعلم.
+- Analyze a student artwork titled "My Colorful Garden" and write suitable feedback.
+- This artwork uses cool colors and repeated lines. What performance level fits it?
+- Suggest a remediation activity for a student who needs to improve composition.
+- Write a short encouraging message for a student who drew a simple landscape.
+- Convert these teacher notes into ready-to-use student feedback.
 
-### أمثلة أسئلة للمعلم
+### Current Limitations
 
-- حلل عمل طالب بعنوان "حديقتي الملونة" واكتب تغذية راجعة مناسبة.
-- هذا العمل يستخدم ألوانًا باردة وخطوطًا متكررة، ما مستوى أداء الطالب؟
-- اقترح نشاطًا علاجيًا لطالب يحتاج إلى تحسين التكوين في اللوحة.
-- اكتب رسالة قصيرة ومشجعة لطالب رسم منظرًا طبيعيًا بتفاصيل قليلة.
-- ساعدني في تحويل ملاحظاتي إلى تغذية راجعة جاهزة للطالب.
+- There is no direct API integration between Copilot and the platform in this release.
+- Copilot does not automatically read arts platform data.
+- The Copilot agent depends on context typed by the teacher.
+- The platform displays a direct link to the Microsoft Copilot Agent from the agent page and teacher dashboard.
+- Teachers should avoid entering sensitive personal student data.
+- Agent output is an educational draft and should be reviewed by the teacher before use.
 
-### حدود النسخة الحالية
+### Future Integration Plan
 
-- لا يوجد تكامل API مباشر بين Copilot والمنصة في هذه المرحلة.
-- لا يقرأ Copilot بيانات منصة arts تلقائيًا.
-- يعتمد الوكيل في Copilot على البيانات التي يكتبها المعلم داخل المحادثة.
-- تعرض منصة arts رابطًا مباشرًا لفتح نسخة Microsoft Copilot Agent من صفحة الوكيل ولوحة المعلم.
-- يجب على المعلم تجنب إدخال بيانات شخصية حساسة للطلاب.
-- نتائج الوكيل مساعدة تربوية أولية ويجب أن يراجعها المعلم قبل اعتمادها.
+A future version can connect Copilot Agent Builder to the platform through secure Actions or APIs so the agent can:
 
-### خطة مستقبلية لربط Copilot بالمنصة عبر Actions أو API
-
-في مرحلة لاحقة يمكن ربط Copilot Agent Builder بمنصة arts عبر Actions أو API آمن بحيث يستطيع الوكيل:
-
-- جلب أعمال الطلاب المتاحة للمعلم حسب الصلاحيات.
-- إرسال طلب تحليل عمل فني إلى endpoint داخل المنصة.
-- حفظ نتيجة التحليل في سجل `ai_artwork_analyses`.
-- فتح صفحة العمل أو صفحة الوكيل داخل المنصة من نتيجة Copilot.
-- الالتزام بنفس نظام الصلاحيات الحالي دون كشف بيانات الطلاب أو مفاتيح الخادم.
+- Fetch artworks available to the teacher according to permissions.
+- Send an analysis request to a platform endpoint.
+- Store the result in `ai_artwork_analyses`.
+- Open the artwork or agent page from Copilot.
+- Preserve the existing permission model without exposing student data or server secrets.
 
 ## Microsoft Copilot Agent Link
-
-- اسم الوكيل: وكيل معلم التربية الفنية لتحليل أعمال الطلاب.
-- تم إنشاء الوكيل باستخدام Microsoft 365 Copilot Agent Builder.
-- رابط الوكيل:
 
 ```text
 https://m365.cloud.microsoft/chat/?titleId=T_40a80c99-7f9e-5c95-5bf4-6f4068fc23b0&source=embedded-builder
 ```
 
-- قد يتطلب الرابط صلاحية Microsoft 365 Copilot داخل المؤسسة حتى يعمل للمقيّمين أو المستخدمين الخارجيين.
-- تعرض المنصة رابطًا مباشرًا لهذه النسخة داخل صفحة وكيل معلم التربية الفنية لتحليل أعمال الطلاب ولوحة المعلم، دون أي تكامل API مباشر أو مشاركة أسرار.
-- سيعتمد العرض النهائي أيضًا على فيديو demo لضمان إمكانية التقييم حتى لو لم يكن الرابط متاحًا خارجيًا.
+This link may require Microsoft 365 Copilot access inside the organization. The final demo can also use a video walkthrough so reviewers can evaluate the solution if external access is limited.
 
 ## Microsoft IQ Requirement
 
-- يتطلب تحدي Agents League استخدام طبقة واحدة على الأقل من طبقات Microsoft IQ.
-- يستخدم هذا المشروع Work IQ من خلال نسخة Microsoft 365 Copilot Agent Builder للوكيل.
-- يقدم المشروع تجربتين متكاملتين: وكيل داخل منصة arts، ووكيل موازٍ داخل Microsoft 365 Copilot.
-- النسخة الحالية من Copilot تعتمد على سياق العمل الفني الذي يدخله المعلم داخل المحادثة، ولا تستدعي backend المنصة مباشرة.
+- Agents League requires at least one Microsoft IQ layer.
+- This project uses Work IQ through the Microsoft 365 Copilot Agent Builder version.
+- The submission demonstrates two complementary experiences: an in-platform agent and a parallel Microsoft 365 Copilot agent.
+- The current Copilot version uses teacher-provided artwork context and does not directly call the platform backend.

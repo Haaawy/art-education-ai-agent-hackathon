@@ -10,9 +10,9 @@ Use this checklist when recording the hackathon video.
 - [ ] Show the Microsoft Copilot Agent card in the dashboard.
 - [ ] Open a class or artwork list.
 - [ ] Show a student artwork card.
-- [ ] Show the "إجراءات الذكاء الاصطناعي" section.
-- [ ] Demonstrate "اقتراح وصف للعمل".
-- [ ] Click "تحليل العمل بالوكيل الذكي".
+- [ ] Show the "AI actions" section.
+- [ ] Demonstrate "Suggest artwork description".
+- [ ] Click "Analyze artwork with the AI agent".
 - [ ] Confirm the agent page opens with the selected artwork.
 - [ ] Run the artwork analysis.
 - [ ] Show the loading state.
@@ -31,7 +31,7 @@ Use this checklist when recording the hackathon video.
 - [ ] Test a prompt inside Copilot, for example:
 
 ```text
-حلل عمل طالب بعنوان "حديقتي الملونة" يستخدم ألوانًا زاهية وتكوينًا بسيطًا، واكتب تغذية راجعة مناسبة.
+Analyze a student artwork titled "My Colorful Garden". It uses bright colors and a simple composition. Write suitable educational feedback.
 ```
 
 - [ ] Show Copilot's structured educational response.

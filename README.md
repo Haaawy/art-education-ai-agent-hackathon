@@ -14,7 +14,7 @@ This repository is a public hackathon/submission copy focused on the **Art Educa
 - Confidential data: not included
 Project name: Art Education AI Agent
 
-Arabic name: وكيل معلم التربية الفنية الذكي
+Arabic name: Art Education Teacher Agent for Student Artwork Analysis
 
 ## Problem
 
@@ -32,7 +32,7 @@ The hackathon version also includes a parallel Microsoft Copilot Agent Builder v
 - Artwork selection from the teacher workflow
 - Structured Arabic analysis for student artworks
 - Analysis steps that make the agent behavior visible
-- Performance levels: ظٹط­طھط§ط¬ ط¯ط¹ظ…ظ‹ط§طŒ ظپظٹ ط·ظˆط± ط§ظ„طھط­ط³ظ†طŒ ظ…طھظ…ظƒظ†طŒ ظ…طھظ‚ط¯ظ…
+- Performance levels: Needs support, Improving, Proficient, Advanced
 - Copy buttons for feedback, student message, and full report
 - Preview fallback mode when an AI provider is not configured
 - Microsoft Copilot Agent link inside the platform

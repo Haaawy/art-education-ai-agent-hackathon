@@ -2,7 +2,7 @@
 
 ## Project Title
 
-Art Education AI Agent - وكيل معلم التربية الفنية لتحليل أعمال الطلاب
+Art Education AI Agent
 
 ## Short Description
 
@@ -54,7 +54,7 @@ The current implementation intentionally avoids direct backend integration with 
 1. Reads artwork data such as title, description, student name, class, and teacher notes.
 2. Analyzes the artistic idea and elements such as composition, color, line, space, material, and expression.
 3. Connects observations to art education skills.
-4. Selects a performance level: يحتاج دعمًا، في طور التحسن، متمكن، متقدم.
+4. Selects a performance level: Needs support, Improving, Proficient, Advanced.
 5. Generates ready-to-use Arabic feedback for the student.
 6. Suggests a remediation or enrichment activity for the teacher.
 7. Shows analysis steps so the teacher can understand the agent workflow.
