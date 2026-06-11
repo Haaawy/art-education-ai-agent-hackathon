@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+node_modules
+dist
+build
+.cache
+.turbo
+.DS_Store
+*.log
+*.pem
+*.key
+*.sqlite
+*.db
+dump*
+backup*
+coverage
