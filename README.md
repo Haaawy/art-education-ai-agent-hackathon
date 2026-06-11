@@ -14,7 +14,7 @@ This repository is a public hackathon/submission copy focused on the **Art Educa
 - Confidential data: not included
 Project name: Art Education AI Agent
 
-Arabic name: ظˆظƒظٹظ„ ظ…ط¹ظ„ظ… ط§ظ„طھط±ط¨ظٹط© ط§ظ„ظپظ†ظٹط© ظ„طھط­ظ„ظٹظ„ ط£ط¹ظ…ط§ظ„ ط§ظ„ط·ظ„ط§ط¨
+Arabic name: وكيل معلم التربية الفنية الذكي
 
 ## Problem
 
